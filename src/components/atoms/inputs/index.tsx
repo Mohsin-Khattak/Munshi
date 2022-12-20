@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   KeyboardTypeOptions,
   NativeSyntheticEvent,
@@ -8,10 +8,13 @@ import {
   TextInputFocusEventData,
   View,
   ViewStyle,
+  TouchableOpacity,
 } from 'react-native';
 import {colors} from '../../../config/colors';
 import {mvs} from '../../../config/metrices';
 import Regular from '../../../typography/regular-text';
+import Feather from 'react-native-vector-icons/Feather';
+
 type props = {
   onChangeText: (text: string) => void;
   value: string;
@@ -21,12 +24,15 @@ type props = {
   labelStyle?: StyleProp<ViewStyle>;
   containerStyle?: StyleProp<ViewStyle>;
   secureTextEntry?: boolean | undefined;
+  isPassword?: boolean;
   keyboardType?: KeyboardTypeOptions | undefined;
   onBlur?:
     | ((e: NativeSyntheticEvent<TextInputFocusEventData>) => void)
     | undefined;
 };
 const PrimaryInput = (props: props) => {
+  const [secure, setSecure] = useState(true);
+
   const {
     onChangeText,
     value,
@@ -36,21 +42,34 @@ const PrimaryInput = (props: props) => {
     labelStyle,
     containerStyle,
     secureTextEntry,
+    isPassword,
     keyboardType,
     onBlur,
   } = props;
   return (
     <View style={[styles.Container, containerStyle]}>
       {/* <Regular style={[styles.labelStyle, labelStyle]} label={label} /> */}
+
       <TextInput
         onBlur={onBlur}
         keyboardType={keyboardType}
-        secureTextEntry={secureTextEntry}
+        secureTextEntry={isPassword && secure}
         value={value}
         placeholder={placeholder}
         onChangeText={onChangeText}
         style={[styles.textInput, style]}
       />
+      {isPassword && (
+        <TouchableOpacity
+          style={styles.PasswordIcon}
+          onPress={() => setSecure(!secure)}>
+          <Feather
+            size={25}
+            name={secure ? 'eye' : 'eye-off'}
+            color={'#000000'}
+          />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
@@ -63,6 +82,9 @@ const styles = StyleSheet.create({
     paddingTop: mvs(7),
     marginBottom: mvs(15),
     borderRadius: mvs(10),
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: mvs(10),
   },
   textInput: {
     color: colors.black,
@@ -72,5 +94,9 @@ const styles = StyleSheet.create({
   },
   labelStyle: {
     color: colors.primary,
+  },
+  PasswordIcon: {
+    position: 'relative',
+    alignSelf: 'center',
   },
 });
