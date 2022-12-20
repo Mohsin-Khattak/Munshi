@@ -10,7 +10,7 @@ type RootStackParamList = {
   SignupNoEmployees: undefined;
   SignupPassword: undefined;
   SignupPhone: undefined;
-
+  ForgetPassword: undefined;
   AddTask: Task | undefined;
   BottomTab: undefined;
 };

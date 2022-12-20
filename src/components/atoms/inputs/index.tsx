@@ -6,14 +6,13 @@ import {
   StyleSheet,
   TextInput,
   TextInputFocusEventData,
+  TouchableOpacity,
   View,
   ViewStyle,
-  TouchableOpacity,
 } from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
 import {colors} from '../../../config/colors';
 import {mvs} from '../../../config/metrices';
-import Regular from '../../../typography/regular-text';
-import Feather from 'react-native-vector-icons/Feather';
 
 type props = {
   onChangeText: (text: string) => void;
@@ -91,6 +90,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center',
     height: mvs(40),
     fontSize: mvs(16),
+    width: mvs(275),
   },
   labelStyle: {
     color: colors.primary,
