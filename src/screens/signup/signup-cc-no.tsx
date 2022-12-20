@@ -1,35 +1,35 @@
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { SignupBar } from 'components/atoms/signup-bar';
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import React from 'react';
-import {View} from 'react-native';
-import {signupFormValidation} from 'validations';
-import {PrimaryButton} from '../../components/atoms/buttons';
+import { View } from 'react-native';
+import { signupFormValidation } from 'validations';
+import { PrimaryButton } from '../../components/atoms/buttons';
 import AppHeader from '../../components/atoms/headers/index';
 import PrimaryInput from '../../components/atoms/inputs';
-import {KeyboardAvoidScrollview} from '../../components/atoms/keyboard-avoid-scrollview';
-import {useAppDispatch} from '../../hooks/use-store';
-import {onSignupPress} from '../../services/firebase/firebase-actions';
+import { KeyboardAvoidScrollview } from '../../components/atoms/keyboard-avoid-scrollview';
+import { useAppDispatch } from '../../hooks/use-store';
+import { onSignupPress } from '../../services/firebase/firebase-actions';
 import RootStackParamList from '../../types/navigation-types/root-stack';
 import Medium from '../../typography/medium-text';
 import styles from './styles';
 type props = NativeStackScreenProps<RootStackParamList, 'SignupCcNo'>;
 
 const SignupCcNo = (props: props) => {
-  const {navigation} = props;
+  const { navigation } = props;
   const dispatch = useAppDispatch();
   const initialValues = {
     name: '',
     email: '',
     password: '',
   };
-  const {values, errors, touched, setFieldValue, setFieldTouched, isValid} =
+  const { values, errors, touched, setFieldValue, setFieldTouched, isValid } =
     useFormik({
       initialValues: initialValues,
       validateOnBlur: true,
       validateOnChange: true,
       validate: signupFormValidation,
-      onSubmit: () => {},
+      onSubmit: () => { },
     });
 
   console.log('touched:=>', touched);
@@ -38,24 +38,23 @@ const SignupCcNo = (props: props) => {
 
   return (
     <View style={styles.container}>
-      <AppHeader back title="Sign-up" />
       <View style={styles.container}>
-      <SignupBar currentIndex={4}/>
-      <KeyboardAvoidScrollview
-        contentContainerStyle={styles.contentContainerStyle}>
-        <PrimaryInput
-          label={'Full Name'}
-          onChangeText={str => setFieldValue('name', str)}
-          value={values.name}
-          placeholder={'Cc Number'}
-        />
+        <SignupBar currentIndex={4} />
+        <KeyboardAvoidScrollview
+          contentContainerStyle={styles.contentContainerStyle}>
+          <PrimaryInput
+            label={'Full Name'}
+            onChangeText={str => setFieldValue('name', str)}
+            value={values.name}
+            placeholder={'Cc Number'}
+          />
 
-        <PrimaryButton
-          title={'Next'}
-          onPress={() => navigation.navigate('SignupNoEmployees')}
-          containerStyle={styles.button}
-        />
-      </KeyboardAvoidScrollview>
+          <PrimaryButton
+            title={'Next'}
+            onPress={() => navigation.navigate('SignupNoEmployees')}
+            containerStyle={styles.button}
+          />
+        </KeyboardAvoidScrollview>
       </View>
     </View>
   );

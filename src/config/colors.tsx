@@ -6,8 +6,9 @@ export const colors = {
   black: '#000000',
   white: '#ffffff',
   transparent: 'transparent',
-  primary: '#085DA6', //'#5586FF'
+  primary: '#232D47', //'#5586FF'
   secondary: '#F2F2F2', //'#F2F2F2',
+  blue: '#4F7EE2',
   shadow: {
     shadowColor: '#000',
     shadowOffset: {

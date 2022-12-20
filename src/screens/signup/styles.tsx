@@ -1,11 +1,11 @@
-import {StyleSheet} from 'react-native';
-import {mvs} from '../../config/metrices';
-import {colors} from '../../config/colors';
+import { StyleSheet } from 'react-native';
+import { mvs } from '../../config/metrices';
+import { colors } from '../../config/colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.primary,
   },
   contentContainerStyle: {
     padding: mvs(20),
