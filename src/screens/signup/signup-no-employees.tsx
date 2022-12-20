@@ -44,40 +44,13 @@ const SignupNoEmployees = (props: props) => {
           label={'Full Name'}
           onChangeText={str => setFieldValue('name', str)}
           value={values.name}
+          placeholder={'Number of Employees'}
         />
-        <PrimaryInput
-          keyboardType={'email-address'}
-          label={'Email'}
-          onChangeText={str => setFieldValue('email', str)}
-          value={values.email}
-        />
-        <PrimaryInput
-          secureTextEntry
-          placeholder={'********'}
-          label={'Password'}
-          onChangeText={str => setFieldValue('password', str)}
-          onBlur={() => setFieldTouched('password', true)}
-          value={values.password}
-        />
+
         <PrimaryButton
-          disabled={!values?.email || !values?.password || !values.name}
-          title={'Signup'}
-          onPress={() =>
-            dispatch(
-              onSignupPress(
-                values?.name,
-                values?.email,
-                values?.password,
-                props,
-              ),
-            )
-          }
+          title={'Next'}
+          onPress={() => navigation.navigate('SignupPassword')}
           containerStyle={styles.button}
-        />
-        <Medium
-          style={styles.accountText}
-          onPress={props?.navigation?.goBack}
-          label={'Already have an account'}
         />
       </KeyboardAvoidScrollview>
     </View>

@@ -1,16 +1,17 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {useFormik} from 'formik';
 import React from 'react';
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {signupFormValidation} from 'validations';
 import {PrimaryButton} from '../../components/atoms/buttons';
 import AppHeader from '../../components/atoms/headers/index';
 import PrimaryInput from '../../components/atoms/inputs';
 import {KeyboardAvoidScrollview} from '../../components/atoms/keyboard-avoid-scrollview';
 import {useAppDispatch} from '../../hooks/use-store';
-import {onSignupPress} from '../../services/firebase/firebase-actions';
 import RootStackParamList from '../../types/navigation-types/root-stack';
 import Medium from '../../typography/medium-text';
+import {Row} from './../../components/atoms/row/index';
+import Bold from './../../typography/bold-text';
 import styles from './styles';
 type props = NativeStackScreenProps<RootStackParamList, 'SignupPassword'>;
 
@@ -41,44 +42,33 @@ const SignupPassword = (props: props) => {
       <KeyboardAvoidScrollview
         contentContainerStyle={styles.contentContainerStyle}>
         <PrimaryInput
-          label={'Full Name'}
-          onChangeText={str => setFieldValue('name', str)}
-          value={values.name}
-        />
-        <PrimaryInput
-          keyboardType={'email-address'}
-          label={'Email'}
-          onChangeText={str => setFieldValue('email', str)}
-          value={values.email}
+          secureTextEntry
+          placeholder={'Password'}
+          label={'Password'}
+          onChangeText={str => setFieldValue('password', str)}
+          onBlur={() => setFieldTouched('password', true)}
+          value={values.password}
         />
         <PrimaryInput
           secureTextEntry
-          placeholder={'********'}
+          placeholder={'Re-enter password'}
           label={'Password'}
           onChangeText={str => setFieldValue('password', str)}
           onBlur={() => setFieldTouched('password', true)}
           value={values.password}
         />
         <PrimaryButton
-          disabled={!values?.email || !values?.password || !values.name}
           title={'Signup'}
-          onPress={() =>
-            dispatch(
-              onSignupPress(
-                values?.name,
-                values?.email,
-                values?.password,
-                props,
-              ),
-            )
-          }
+          onPress={() => navigation.navigate('Home')}
           containerStyle={styles.button}
         />
-        <Medium
-          style={styles.accountText}
-          onPress={props?.navigation?.goBack}
-          label={'Already have an account'}
-        />
+        <Row style={styles.accountText}>
+          <Medium label={'Register an account?'} />
+          <TouchableOpacity
+            onPress={() => props?.navigation?.navigate('SignupName')}>
+            <Bold label={'Log In'} />
+          </TouchableOpacity>
+        </Row>
       </KeyboardAvoidScrollview>
     </View>
   );
