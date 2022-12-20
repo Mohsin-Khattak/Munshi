@@ -1,49 +1,34 @@
 {
   "project_info": {
-    "project_number": "222367895520",
-    "project_id": "rnstructure-6b276",
-    "storage_bucket": "rnstructure-6b276.appspot.com"
+    "project_number": "1069872587563",
+    "project_id": "munshi-9249d",
+    "storage_bucket": "munshi-9249d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:222367895520:android:2b131d32ef5f4c000c6585",
+        "mobilesdk_app_id": "1:1069872587563:android:8a39b67e50101af42c1b6e",
         "android_client_info": {
           "package_name": "com.munshi"
         }
       },
       "oauth_client": [
         {
-          "client_id": "222367895520-0hheutu0q19t7v47hghq6e5pptahv2fq.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.munshi",
-            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
-          }
-        },
-        {
-          "client_id": "222367895520-ulb4rutvqtdld9olrkdees5ut1nanh1c.apps.googleusercontent.com",
+          "client_id": "1069872587563-kirnmdm3uogcbhcfi2atqk9eco251ssi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyApN_ZvV3c0bll7WJ1zJadPkyHUNuSEdio"
+          "current_key": "AIzaSyALaeKE2LQQSYJn1YQRtMOMAcml5AXS6VU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "222367895520-ulb4rutvqtdld9olrkdees5ut1nanh1c.apps.googleusercontent.com",
+              "client_id": "1069872587563-kirnmdm3uogcbhcfi2atqk9eco251ssi.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "222367895520-qg4af6as1qa6e40qc6stdp3ve91u47kc.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.rnwitbit"
-              }
             }
           ]
         }

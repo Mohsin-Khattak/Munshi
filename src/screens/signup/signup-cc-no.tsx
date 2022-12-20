@@ -1,4 +1,5 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import { SignupBar } from 'components/atoms/signup-bar';
 import {useFormik} from 'formik';
 import React from 'react';
 import {View} from 'react-native';
@@ -38,6 +39,8 @@ const SignupCcNo = (props: props) => {
   return (
     <View style={styles.container}>
       <AppHeader back title="Sign-up" />
+      <View style={styles.container}>
+      <SignupBar currentIndex={4}/>
       <KeyboardAvoidScrollview
         contentContainerStyle={styles.contentContainerStyle}>
         <PrimaryInput
@@ -53,6 +56,7 @@ const SignupCcNo = (props: props) => {
           containerStyle={styles.button}
         />
       </KeyboardAvoidScrollview>
+      </View>
     </View>
   );
 };

@@ -1,4 +1,5 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import { SignupBar } from 'components/atoms/signup-bar';
 import {useFormik} from 'formik';
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
@@ -39,6 +40,8 @@ const SignupPassword = (props: props) => {
   return (
     <View style={styles.container}>
       <AppHeader back title="Sign-up" />
+      <View style={styles.container}>
+      <SignupBar currentIndex={6}/>
       <KeyboardAvoidScrollview
         contentContainerStyle={styles.contentContainerStyle}>
         <PrimaryInput
@@ -70,6 +73,7 @@ const SignupPassword = (props: props) => {
           </TouchableOpacity>
         </Row>
       </KeyboardAvoidScrollview>
+      </View>
     </View>
   );
 };

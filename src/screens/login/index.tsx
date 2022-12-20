@@ -11,6 +11,7 @@ import RootStackParamList from '../../types/navigation-types/root-stack';
 import Medium from '../../typography/medium-text';
 import styles from './styles';
 import Bold from './../../typography/bold-text';
+import { SignupBar } from 'components/atoms/signup-bar';
 
 type props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 

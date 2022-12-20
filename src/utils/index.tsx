@@ -10,20 +10,20 @@ import RootStackParamList from '../types/navigation-types/root-stack';
 export const horizontalAnimation: any = {
   headerShown: false,
   gestureDirection: 'horizontal',
-  cardStyleInterpolator: ({ current, layouts }: any) => {
-    return {
-      cardStyle: {
-        transform: [
-          {
-            translateX: current.progress.interpolate({
-              inputRange: [0, 1],
-              outputRange: [layouts.screen.width, 0],
-            }),
-          },
-        ],
-      },
-    };
-  },
+  // cardStyleInterpolator: ({ current, layouts }: any) => {
+  //   return {
+  //     cardStyle: {
+  //       transform: [
+  //         {
+  //           translateX: current.progress.interpolate({
+  //             inputRange: [0, 1],
+  //             outputRange: [layouts.screen.width, 0],
+  //           }),
+  //         },
+  //       ],
+  //     },
+  //   };
+  // },
 };
 
 // const hasPermissionIOS = async () => {
@@ -44,7 +44,7 @@ export const horizontalAnimation: any = {
 //   return false;
 // };
 export const UTILS = {
-  resetStack: (props: NavigationProps, routeName: string,params?:object) => {
+  resetStack: (props: NavigationProps, routeName: string, params?: object) => {
     props?.navigation.dispatch(
       CommonActions.navigate({
         name: routeName,
@@ -216,7 +216,7 @@ export const UTILS = {
   //     return false;
   //   }
   // },
-  
+
   serialize: (obj: any) => {
     var str = [];
     for (var p in obj)
