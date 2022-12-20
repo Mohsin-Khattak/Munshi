@@ -19,9 +19,8 @@ const SignupPassword = (props: props) => {
   const {navigation} = props;
   const dispatch = useAppDispatch();
   const initialValues = {
-    name: '',
-    email: '',
     password: '',
+    re_password: '',
   };
   const {values, errors, touched, setFieldValue, setFieldTouched, isValid} =
     useFormik({
@@ -42,20 +41,22 @@ const SignupPassword = (props: props) => {
       <KeyboardAvoidScrollview
         contentContainerStyle={styles.contentContainerStyle}>
         <PrimaryInput
-          secureTextEntry
+          secureTextEntry={true}
           placeholder={'Password'}
           label={'Password'}
           onChangeText={str => setFieldValue('password', str)}
           onBlur={() => setFieldTouched('password', true)}
           value={values.password}
+          isPassword
         />
         <PrimaryInput
-          secureTextEntry
+          secureTextEntry={true}
           placeholder={'Re-enter password'}
           label={'Password'}
-          onChangeText={str => setFieldValue('password', str)}
-          onBlur={() => setFieldTouched('password', true)}
-          value={values.password}
+          onChangeText={str => setFieldValue('re_password', str)}
+          onBlur={() => setFieldTouched('re_password', true)}
+          value={values.re_password}
+          isPassword
         />
         <PrimaryButton
           title={'Signup'}
