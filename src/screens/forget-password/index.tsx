@@ -1,16 +1,12 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import {Row} from 'components/atoms/row';
 import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import {PrimaryButton} from '../../components/atoms/buttons';
-import AppHeader from '../../components/atoms/headers/index';
 import PrimaryInput from '../../components/atoms/inputs';
 import {KeyboardAvoidScrollview} from '../../components/atoms/keyboard-avoid-scrollview';
 import {useAppDispatch, useAppSelector} from '../../hooks/use-store';
 import RootStackParamList from '../../types/navigation-types/root-stack';
-import Medium from '../../typography/medium-text';
 import styles from './styles';
-import Bold from '../../typography/bold-text';
 
 type props = NativeStackScreenProps<RootStackParamList, 'ForgetPassword'>;
 
@@ -25,7 +21,6 @@ const ForgetPassword = (props: props) => {
 
   return (
     <View style={styles.container}>
-      <AppHeader title="Sign-in" />
       <KeyboardAvoidScrollview
         contentContainerStyle={styles.contentContainerStyle}>
         <PrimaryInput
@@ -37,17 +32,10 @@ const ForgetPassword = (props: props) => {
         />
 
         <PrimaryButton
-          title={'Login'}
+          title={'Reset Password'}
           onPress={() => {}}
           containerStyle={styles.button}
         />
-        <Row style={styles.accountText}>
-          <Medium label={'Register an account?'} />
-          <TouchableOpacity
-            onPress={() => props?.navigation?.navigate('SignupName')}>
-            <Bold label={'Sign Up'} />
-          </TouchableOpacity>
-        </Row>
       </KeyboardAvoidScrollview>
     </View>
   );

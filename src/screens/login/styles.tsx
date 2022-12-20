@@ -1,6 +1,6 @@
-import { StyleSheet } from 'react-native';
-import { mvs } from '../../config/metrices';
-import { colors, darkTheme } from '../../config/colors';
+import {StyleSheet} from 'react-native';
+import {mvs} from '../../config/metrices';
+import {colors, darkTheme} from '../../config/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     marginTop: mvs(100),
   },
   accountText: {
-    // color:colors.primary,
     // alignSelf:'center',
     marginTop: mvs(20),
     paddingHorizontal: mvs(60),
@@ -28,7 +27,7 @@ const styles = StyleSheet.create({
     width: mvs(20),
     height: mvs(20),
     borderRadius: mvs(2),
-    color: darkTheme.black,
+    borderColor: darkTheme.white,
     borderWidth: mvs(1),
     alignItems: 'center',
     justifyContent: 'center',
@@ -40,7 +39,10 @@ const styles = StyleSheet.create({
   },
   forgotText: {
     fontSize: mvs(16),
-    color: darkTheme.black,
+    color: darkTheme.white,
+  },
+  rememberMeContainer: {
+    marginTop: mvs(24),
   },
 });
 export default styles;

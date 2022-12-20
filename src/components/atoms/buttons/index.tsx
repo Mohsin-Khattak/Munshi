@@ -6,10 +6,10 @@ import {
   TouchableOpacity,
   ViewStyle,
 } from 'react-native';
-import { colors } from '../../../config/colors';
-import { mvs } from '../../../config/metrices';
+import {colors} from '../../../config/colors';
+import {mvs} from '../../../config/metrices';
 import Regular from '../../../typography/regular-text';
-import { Loader } from '../loader';
+import {Loader} from '../loader';
 type props = {
   onPress: () => void;
   title: string;
@@ -19,7 +19,7 @@ type props = {
   containerStyle?: StyleProp<ViewStyle>;
 };
 export const PlusButton = (props: props) => {
-  const { onPress, title } = props;
+  const {onPress, title} = props;
   return (
     <TouchableOpacity style={styles.plusContainer} onPress={onPress}>
       <Regular style={styles.plusText} label={'+'} />
@@ -27,14 +27,14 @@ export const PlusButton = (props: props) => {
   );
 };
 export const PrimaryButton = (props: props) => {
-  const { onPress, title, disabled, loading, textStyle, containerStyle } = props;
+  const {onPress, title, disabled, loading, textStyle, containerStyle} = props;
   return (
     <TouchableOpacity
       disabled={disabled || loading}
       style={[
         styles.primaryContainer,
         containerStyle,
-        { backgroundColor: `${colors.blue}${disabled ? '50' : ''}` },
+        {backgroundColor: `${colors.white}${disabled ? '50' : ''}`},
       ]}
       onPress={onPress}>
       {loading ? (
@@ -67,12 +67,12 @@ const styles = StyleSheet.create({
   primaryContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: colors.primary,
+    backgroundColor: colors.white,
     width: '100%',
     height: mvs(50),
     borderRadius: mvs(15),
   },
   primaryText: {
-    color: colors.white,
+    color: colors.black,
   },
 });
