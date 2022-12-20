@@ -1,20 +1,18 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {Row} from 'components/atoms/row';
 import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
+import Feather from 'react-native-vector-icons/Feather';
 import {PrimaryButton} from '../../components/atoms/buttons';
-import AppHeader from '../../components/atoms/headers/index';
 import PrimaryInput from '../../components/atoms/inputs';
 import {KeyboardAvoidScrollview} from '../../components/atoms/keyboard-avoid-scrollview';
 import {useAppDispatch, useAppSelector} from '../../hooks/use-store';
 import RootStackParamList from '../../types/navigation-types/root-stack';
 import Medium from '../../typography/medium-text';
-import styles from './styles';
-import Bold from './../../typography/bold-text';
-import {SignupBar} from 'components/atoms/signup-bar';
-import Regular from './../../typography/regular-text';
 import {colors} from './../../config/colors';
-import Feather from 'react-native-vector-icons/Feather';
+import Bold from './../../typography/bold-text';
+import Regular from './../../typography/regular-text';
+import styles from './styles';
 
 type props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
