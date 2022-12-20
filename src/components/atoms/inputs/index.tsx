@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   KeyboardTypeOptions,
   NativeSyntheticEvent,
@@ -11,8 +11,8 @@ import {
   ViewStyle,
 } from 'react-native';
 import Feather from 'react-native-vector-icons/Feather';
-import {colors} from '../../../config/colors';
-import {mvs} from '../../../config/metrices';
+import { colors } from '../../../config/colors';
+import { mvs } from '../../../config/metrices';
 
 type props = {
   onChangeText: (text: string) => void;
@@ -26,8 +26,8 @@ type props = {
   isPassword?: boolean;
   keyboardType?: KeyboardTypeOptions | undefined;
   onBlur?:
-    | ((e: NativeSyntheticEvent<TextInputFocusEventData>) => void)
-    | undefined;
+  | ((e: NativeSyntheticEvent<TextInputFocusEventData>) => void)
+  | undefined;
 };
 const PrimaryInput = (props: props) => {
   const [secure, setSecure] = useState(true);
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: mvs(10),
+    backgroundColor: colors.secondary,
   },
   textInput: {
     color: colors.black,

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ColorValue, StyleProp, StyleSheet, Text, TextStyle } from 'react-native';
 import fonts from '../assets/fonts';
-import {colors} from '../config/colors';
+import { colors } from '../config/colors';
 import { mvs } from '../config/metrices';
 type FcProps = {
   label?: string | number;
@@ -25,7 +25,7 @@ const Bold: React.FC<FcProps> = ({
     <Text
       numberOfLines={numberOfLines}
       {...props}
-      style={[{...styles.label, color: color, fontSize: fontSize,},style]}>
+      style={[{ ...styles.label, color: color, fontSize: fontSize, }, style]}>
       {label}
       {children}
     </Text>
@@ -38,6 +38,6 @@ const styles = StyleSheet.create({
   label: {
     fontFamily: fonts.bold,
     fontSize: mvs(15),
-    color: colors.black, //default color
+    color: colors.white, //default color
   },
 });

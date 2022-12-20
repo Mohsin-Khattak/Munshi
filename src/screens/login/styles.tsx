@@ -1,15 +1,19 @@
-import {StyleSheet} from 'react-native';
-import {mvs} from '../../config/metrices';
-import {colors, darkTheme} from '../../config/colors';
+import { StyleSheet } from 'react-native';
+import { mvs } from '../../config/metrices';
+import { colors, darkTheme } from '../../config/colors';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.primary,
+  },
+  label: {
+    paddingHorizontal: mvs(20),
+    paddingBottom: mvs(26),
   },
   contentContainerStyle: {
-    padding: mvs(20),
-    paddingTop: mvs(100),
+    paddingHorizontal: mvs(20),
+    flexGrow: 1,
   },
   button: {
     marginTop: mvs(100),
@@ -32,7 +36,7 @@ const styles = StyleSheet.create({
   rememberText: {
     fontSize: mvs(16),
     marginLeft: mvs(12),
-    color: darkTheme.black,
+    color: darkTheme.white,
   },
   forgotText: {
     fontSize: mvs(16),
