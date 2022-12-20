@@ -1,17 +1,16 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {Row} from 'components/atoms/row';
 import React from 'react';
-import {Alert, Linking, View} from 'react-native';
-import {KeyboardAvoidScrollview} from '../../components/atoms/keyboard-avoid-scrollview';
+import {View, TouchableOpacity} from 'react-native';
 import {PrimaryButton} from '../../components/atoms/buttons';
 import AppHeader from '../../components/atoms/headers/index';
 import PrimaryInput from '../../components/atoms/inputs';
-import RootStackParamList from '../../types/navigation-types/root-stack';
-import styles from './styles';
-import {onLoginPress} from '../../services/firebase/firebase-actions';
-import Medium from '../../typography/medium-text';
+import {KeyboardAvoidScrollview} from '../../components/atoms/keyboard-avoid-scrollview';
 import {useAppDispatch, useAppSelector} from '../../hooks/use-store';
-import {openInbox} from 'react-native-email-link';
-import {navigationRef} from 'navigation/navigation-ref';
+import RootStackParamList from '../../types/navigation-types/root-stack';
+import Medium from '../../typography/medium-text';
+import styles from './styles';
+import Bold from './../../typography/bold-text';
 
 type props = NativeStackScreenProps<RootStackParamList, 'Login'>;
 
@@ -35,6 +34,7 @@ const Login = (props: props) => {
           label={'Email'}
           onChangeText={str => setValues({...values, email: str})}
           value={values.email}
+          placeholder={'Email'}
         />
         <PrimaryInput
           secureTextEntry
@@ -45,17 +45,16 @@ const Login = (props: props) => {
         />
         <PrimaryButton
           title={'Login'}
-          onPress={() => {
-            // console.log('navigationRef.current.getRootState()::',navigationRef?.current?.getRootState());
-            //  Linking.openURL('demo://app/AddTask/123');
-          }}
+          onPress={() => {}}
           containerStyle={styles.button}
         />
-        <Medium
-          style={styles.accountText}
-          onPress={() => props?.navigation?.navigate('SignupName')}
-          label={'Register an account'}
-        />
+        <Row style={styles.accountText}>
+          <Medium label={'Register an account?'} />
+          <TouchableOpacity
+            onPress={() => props?.navigation?.navigate('SignupName')}>
+            <Bold label={'Sign Up'} />
+          </TouchableOpacity>
+        </Row>
       </KeyboardAvoidScrollview>
     </View>
   );
